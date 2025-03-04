@@ -14,7 +14,9 @@ export default function Header() {
         </div>
 
         <Button size="sm" variant="outline" asChild>
-          <a href="/" target="_blank" rel="noreferrer">View Shop</a>
+          <a href="/" target="_blank" rel="noreferrer">
+            View Shop
+          </a>
         </Button>
       </div>
     </header>

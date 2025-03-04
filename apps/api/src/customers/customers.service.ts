@@ -4,7 +4,7 @@ import { PrismaService } from "src/prisma/prisma.service";
 
 @Injectable()
 export class CustomersService {
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
   async create(createCustomerDto: Prisma.CustomerCreateInput) {
     return this.prisma.customer.create({
@@ -13,12 +13,16 @@ export class CustomersService {
   }
 
   async findAll() {
-    return this.prisma.customer.findMany({});
+    return this.prisma.customer.findMany({
+      include: {
+        orders: true,
+      },
+    });
   }
 
   async findOne(id: string) {
     return this.prisma.customer.findUnique({
-      where: { id }
+      where: { id },
     });
   }
 

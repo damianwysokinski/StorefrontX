@@ -14,59 +14,90 @@ datasource db {
 }
 
 model User {
-  id        String    @id @default(uuid())
+  id        String   @id @default(uuid())
   name      String?
-  email     String    @unique
+  email     String   @unique
   password  String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Customer {
-  id        String    @id @default(uuid())
+  id        String   @id @default(uuid())
   firstName String?
   lastName  String?
-  email     String    @unique
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  email     String   @unique
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id         String      @id @default(uuid())
+  customerId String
+  status     OrderStatus @default(PENDING)
+  total      Float
+  items      OrderItem[]
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  user       Customer    @relation(fields: [customerId], references: [id])
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
 }
 
 model Image {
-  id          String    @id @default(uuid())
-  productId   String
-  src         String
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  product     Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  id        String   @id @default(uuid())
+  productId String
+  src       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Review {
-  id         String     @id @default(uuid())
-  productId  String
-  rating     Int
-  title      String
-  content    String
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-  product    Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  id        String   @id @default(uuid())
+  productId String
+  rating    Int
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Product {
-  id          String    @id @default(uuid())
-  title       String    @unique
-  handle      String    @unique
+  id          String        @id @default(uuid())
+  title       String        @unique
+  handle      String        @unique
   images      Image[]
   description String?
   category    String?
   price       Float
-  quantity    Int       @default(0)
+  quantity    Int           @default(0)
   reviews     Review[]
-  status      Status    @default(draft)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  orderItem   OrderItem[]
+  status      ProductStatus @default(draft)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
 }
 
-enum Status {
+enum ProductStatus {
   active
   draft
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
 }

@@ -12,7 +12,7 @@ import { Prisma } from "@prisma/client";
 
 @Controller("customers")
 export class CustomersController {
-  constructor(private readonly customersService: CustomersService) { }
+  constructor(private readonly customersService: CustomersService) {}
 
   @Post()
   create(@Body() createCustomerDto: Prisma.CustomerCreateInput) {

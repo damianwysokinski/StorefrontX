@@ -1,9 +1,8 @@
-import { getCustomerById } from "@/lib/customers"
-import PageHeader from "../../_components/shared/page-header"
-import Link from "next/link"
-import { MoveLeft } from "lucide-react"
-import PageTitle from "../../_components/shared/page-title"
-
+import { getCustomerById } from '@/lib/customers'
+import PageHeader from '../../_components/shared/page-header'
+import Link from 'next/link'
+import { MoveLeft } from 'lucide-react'
+import PageTitle from '../../_components/shared/page-title'
 
 export async function generateMetadata({
   params,
@@ -18,7 +17,6 @@ export async function generateMetadata({
     title: `StorefrontX - Customers - ${email}`,
   }
 }
-
 
 export default async function Page({
   params,

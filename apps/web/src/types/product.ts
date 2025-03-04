@@ -1,5 +1,6 @@
 import { Image } from './image'
 import { Review } from './review'
+import { OrderItem } from '@/types/order'
 
 export interface Product {
   id?: string
@@ -11,6 +12,7 @@ export interface Product {
   price: number
   quantity: number
   reviews?: Review[]
+  orderItem?: OrderItem[]
   status: string
   createdAt?: string
   updatedAt?: string

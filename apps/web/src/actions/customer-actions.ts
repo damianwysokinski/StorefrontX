@@ -1,7 +1,7 @@
 'use server'
 
-import { addCustomer } from "@/lib/customers"
-import { redirect } from "next/navigation"
+import { addCustomer } from '@/lib/customers'
+import { redirect } from 'next/navigation'
 
 export async function createCustomer(formData: FormData) {
   const firstName = formData.get('firstName') as string
@@ -11,12 +11,10 @@ export async function createCustomer(formData: FormData) {
   const { id } = await addCustomer({
     firstName,
     lastName,
-    email
+    email,
   })
 
   redirect(`/dashboard/customers/${id}`)
 }
 
-export async function updateCustomer(customerId: string, formData: FormData) {
-
-}
+export async function updateCustomer(customerId: string, formData: FormData) {}

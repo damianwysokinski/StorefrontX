@@ -19,4 +19,4 @@ import { OrdersModule } from "./orders/orders.module";
   controllers: [],
   providers: [PrismaService],
 })
-export class AppModule { }
+export class AppModule {}

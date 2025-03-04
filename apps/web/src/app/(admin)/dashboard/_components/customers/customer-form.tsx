@@ -57,8 +57,7 @@ export default function CustomerForm({
           </div>
 
           <Card>
-            <CardContent className="space-y-4">
-            </CardContent>
+            <CardContent className="space-y-4"></CardContent>
           </Card>
         </div>
 
