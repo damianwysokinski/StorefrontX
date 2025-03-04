@@ -1,4 +1,4 @@
-import Section from '../_components/shared/Section'
+import Section from '../_components/shared/section'
 
 export default async function Page() {
   return (

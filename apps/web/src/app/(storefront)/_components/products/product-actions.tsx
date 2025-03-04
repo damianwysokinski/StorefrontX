@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import ButtonAddToCart from '../shared/ButtonAddToCart'
-import QuantityInput from '../shared/QuantityInput'
+import ButtonAddToCart from '../shared/button-add-to-cart'
+import QuantityInput from '../shared/quantity-input'
 import { Product } from '@/types/product'
 
 interface ProductActionsProps {

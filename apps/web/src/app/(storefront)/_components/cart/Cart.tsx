@@ -1,8 +1,8 @@
 'use client'
 
-import CartTable from './CartTable'
-import CartSummary from './CartSummary'
-import CartEmpty from './CartEmpty'
+import CartTable from './cart-table'
+import CartSummary from './cart-summary'
+import CartEmpty from './cart-empty'
 import { useCartStore } from '@/stores/cart-store'
 
 export default function Cart() {

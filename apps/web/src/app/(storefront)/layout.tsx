@@ -1,6 +1,6 @@
 import { Toaster } from '@/components/ui/sonner'
-import Footer from './_components/layout/Footer'
-import Header from './_components/layout/Header'
+import Footer from './_components/layout/footer/footer'
+import Header from './_components/layout/header/header'
 
 export default function StoreLayout({
   children,

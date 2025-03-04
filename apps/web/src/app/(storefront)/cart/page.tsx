@@ -1,5 +1,5 @@
-import Cart from '../_components/cart/Cart'
-import Section from '../_components/shared/Section'
+import Cart from '../_components/cart/cart'
+import Section from '../_components/shared/section'
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 'use client'
 
 import { Product } from '@/types/product'
-import CartTableItem from './CartTableItem'
+import CartTableItem from './cart-table-item'
 import { useCartStore } from '@/stores/cart-store'
 
 export default function CartTable() {

@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import ProductForm from '../../_components/products/ProductForm'
+import ProductForm from '../../_components/products/product-form'
 import { createProduct } from '@/actions/product-actions'
 import { MoveLeft } from 'lucide-react'
-import PageTitle from '../../_components/shared/PageTitle'
-import PageHeader from '../../_components/shared/PageHeader'
+import PageTitle from '../../_components/shared/page-title'
+import PageHeader from '../../_components/shared/page-header'
 import { Button } from '@/components/ui/button'
 
 export const metadata = {

@@ -1,7 +1,7 @@
 import { Product } from '@/types/product'
 import Image from 'next/image'
 import Link from 'next/link'
-import QuantityInput from '../shared/QuantityInput'
+import QuantityInput from '../shared/quantity-input'
 import { Trash } from 'lucide-react'
 import { useCartStore } from '@/stores/cart-store'
 import { Button } from '@/components/ui/button'

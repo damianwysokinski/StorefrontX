@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import HeaderMenuButton from './HeaderMenuButton'
+import HeaderMenuButton from './header-menu-button'
 
 export default function Header() {
   return (

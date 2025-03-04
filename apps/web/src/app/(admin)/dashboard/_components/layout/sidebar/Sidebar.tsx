@@ -1,7 +1,7 @@
 'use client'
 
 import { useSidebarStore } from '@/stores/sidebar-store'
-import SidebarMenu from './SidebarMenu'
+import SidebarMenu from './sidebar-menu'
 
 export default function Sidebar() {
   const { isMenuOpen } = useSidebarStore()

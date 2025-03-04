@@ -1,7 +1,7 @@
 import { getProducts } from '@/lib/products'
-import ProductsTable from '../_components/products/ProductsTable'
-import PageTitle from '../_components/shared/PageTitle'
-import PageHeader from '../_components/shared/PageHeader'
+import ProductsTable from '../_components/products/products-table'
+import PageTitle from '../_components/shared/page-title'
+import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
