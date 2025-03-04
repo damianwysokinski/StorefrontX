@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { MoveLeft } from 'lucide-react'
 import PageTitle from '../../_components/shared/page-title'
 import PageHeader from '../../_components/shared/page-header'
+import CustomerForm from '../../_components/customers/customer-form'
+import { Button } from '@/components/ui/button'
+import { createCustomer } from '@/actions/customer-actions'
 
 export const metadata = {
   title: 'StorefrontX - Customers - New',
@@ -18,6 +21,12 @@ export default async function Page() {
           <PageTitle title="New customer" />
         </div>
       </PageHeader>
+
+      <CustomerForm action={createCustomer}>
+        <Button size="sm" type="submit">
+          Save
+        </Button>
+      </CustomerForm>
     </>
   )
 }
