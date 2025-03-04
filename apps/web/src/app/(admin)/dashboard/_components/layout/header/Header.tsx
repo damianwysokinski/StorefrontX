@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import HeaderMenuButton from './header-menu-button'
+import { Button } from '@/components/ui/button'
 
 export default function Header() {
   return (
@@ -11,6 +12,10 @@ export default function Header() {
             <span className="text-white font-bold text-lg">StorefrontX</span>
           </Link>
         </div>
+
+        <Button size="sm" variant="outline" asChild>
+          <a href="/" target="_blank" rel="noreferrer">View Shop</a>
+        </Button>
       </div>
     </header>
   )
