@@ -36,7 +36,7 @@ export default async function Page({
     },
   ]
 
-  if (status === 'draft') notFound()
+  if (!product || status === 'draft') notFound()
 
   return (
     <>
