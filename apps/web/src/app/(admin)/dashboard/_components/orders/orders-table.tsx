@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table'
 import Link from 'next/link'
 import { Order } from '@/types/order'
-import { formatDate } from '@/lib/format-date'
+import { formatDate } from '@/lib/utils/format-date'
 
 interface OrdersTableProps {
   orders: Order[]

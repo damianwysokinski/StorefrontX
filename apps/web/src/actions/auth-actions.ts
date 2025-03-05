@@ -1,7 +1,7 @@
 'use server'
 
-import { logInUser } from '@/lib/auth'
-import { createSession } from '@/lib/session'
+import { logInUser } from '@/lib/auth/auth'
+import { createSession } from '@/lib/auth/session'
 import { redirect } from 'next/navigation'
 
 export async function logIn(formData: FormData) {

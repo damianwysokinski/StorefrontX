@@ -2,7 +2,7 @@ import PageTitle from '../_components/shared/page-title'
 import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { getCustomers } from '@/lib/customers'
+import { getCustomers } from '@/lib/api/customers'
 import CustomersTable from '../_components/customers/customers-table'
 
 export const metadata = {

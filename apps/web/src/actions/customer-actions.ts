@@ -1,6 +1,6 @@
 'use server'
 
-import { addCustomer } from '@/lib/customers'
+import { addCustomer } from '@/lib/api/customers'
 import { redirect } from 'next/navigation'
 
 export async function createCustomer(formData: FormData) {

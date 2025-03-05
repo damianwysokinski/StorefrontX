@@ -1,4 +1,4 @@
-import { getProductById } from '@/lib/products'
+import { getProductById } from '@/lib/api/products'
 import Link from 'next/link'
 import ProductForm from '../../_components/products/product-form'
 import { removeProduct, updateProduct } from '@/actions/product-actions'

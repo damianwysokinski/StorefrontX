@@ -1,4 +1,4 @@
-import { getCustomerById } from '@/lib/customers'
+import { getCustomerById } from '@/lib/api/customers'
 import PageHeader from '../../_components/shared/page-header'
 import Link from 'next/link'
 import { MoveLeft } from 'lucide-react'

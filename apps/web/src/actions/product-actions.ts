@@ -1,6 +1,6 @@
 'use server'
 
-import { addProduct, deleteProduct, editProduct } from '@/lib/products'
+import { addProduct, deleteProduct, editProduct } from '@/lib/api/products'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 

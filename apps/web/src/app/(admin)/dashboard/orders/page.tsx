@@ -2,7 +2,7 @@ import PageTitle from '../_components/shared/page-title'
 import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { getOrders } from '@/lib/orders'
+import { getOrders } from '@/lib/api/orders'
 import OrdersTable from '@/app/(admin)/dashboard/_components/orders/orders-table'
 
 export const metadata = {

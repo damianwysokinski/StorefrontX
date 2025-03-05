@@ -1,4 +1,4 @@
-import { getProducts } from '@/lib/products'
+import { getProducts } from '@/lib/api/products'
 import ProductsTable from '../_components/products/products-table'
 import PageTitle from '../_components/shared/page-title'
 import PageHeader from '../_components/shared/page-header'

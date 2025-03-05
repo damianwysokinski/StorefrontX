@@ -4,7 +4,7 @@ import ProductReviews from '../../_components/products/product-reviews'
 import Section from '../../_components/shared/section'
 import ProductActions from '../../_components/products/product-actions'
 import { notFound } from 'next/navigation'
-import { getProductById } from '@/lib/products'
+import { getProductById } from '@/lib/api/products'
 import { Separator } from '@/components/ui/separator'
 import {
   Breadcrumb,

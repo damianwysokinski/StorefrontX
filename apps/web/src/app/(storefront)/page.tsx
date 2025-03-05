@@ -1,4 +1,4 @@
-import { getProducts } from '@/lib/products'
+import { getProducts } from '@/lib/api/products'
 import ProductsList from './_components/products/product-list'
 import Section from './_components/shared/section'
 
