@@ -1,6 +1,6 @@
 'use client'
 
-import { House, Package, Tags, User } from 'lucide-react'
+import { House, Package, Settings, Tags, User } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -39,6 +39,12 @@ export default function SidebarMenu() {
       icon: <User size={16} />,
       url: 'customers',
       label: 'Customers',
+    },
+    {
+      key: 'settings',
+      icon: <Settings size={16} />,
+      url: 'settings',
+      label: 'Settings',
     },
   ]
 
