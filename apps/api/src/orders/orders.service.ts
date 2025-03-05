@@ -29,7 +29,12 @@ export class OrdersService {
     return this.prisma.order.findUnique({
       where: { id },
       include: {
-        items: true,
+        items: {
+          include: {
+            product: true,
+          },
+        },
+        user: true,
       },
     });
   }
