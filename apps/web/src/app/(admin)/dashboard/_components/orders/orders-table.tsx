@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table'
 import Link from 'next/link'
 import { Order } from '@/types/order'
+import { formatDate } from '@/lib/format-date'
 
 interface OrdersTableProps {
   orders: Order[]
@@ -30,24 +31,24 @@ export default function OrdersTable({ orders }: OrdersTableProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {orders.map(
-              ({ id, items, total, status, user, createdAt }) => {
-                return (
-                  <TableRow key={id}>
-                    <TableCell className="font-medium">
-                      <Link href={`/dashboard/orders/${id}`}>{id}</Link>
-                    </TableCell>
-                    <TableCell className="font-medium">{createdAt}</TableCell>
-                    <TableCell className="font-medium">{user.email}</TableCell>
-                    <TableCell className="font-medium">${total}</TableCell>
-                    <TableCell className="font-medium">{status}</TableCell>
-                    <TableCell className="font-medium">
-                      {items.length} {items.length === 1 ? 'item' : 'items'}
-                    </TableCell>
-                  </TableRow>
-                )
-              },
-            )}
+            {orders.map(({ id, items, total, status, user, createdAt }) => {
+              return (
+                <TableRow key={id}>
+                  <TableCell className="font-medium">
+                    <Link href={`/dashboard/orders/${id}`}>{id}</Link>
+                  </TableCell>
+                  <TableCell className="font-medium">
+                    {createdAt && formatDate(createdAt)}
+                  </TableCell>
+                  <TableCell className="font-medium">{user.email}</TableCell>
+                  <TableCell className="font-medium">${total}</TableCell>
+                  <TableCell className="font-medium">{status}</TableCell>
+                  <TableCell className="font-medium">
+                    {items.length} {items.length === 1 ? 'item' : 'items'}
+                  </TableCell>
+                </TableRow>
+              )
+            })}
           </TableBody>
         </Table>
       ) : (
