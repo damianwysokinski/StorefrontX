@@ -1,16 +1,14 @@
 'use server'
 
-import axios from 'axios'
 import { Order } from '@/types/order'
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
+import axiosClient from '@/lib/api/axiosClient'
 
 export async function getOrders() {
-  const { data } = await axios.get(`${API_BASE_URL}/orders`)
+  const { data } = await axiosClient.get('/orders')
   return data
 }
 
 export async function getOrderById(id: string): Promise<Order> {
-  const { data } = await axios.get(`${API_BASE_URL}/orders/${id}`)
+  const { data } = await axiosClient.get(`/orders/${id}`)
   return data
 }
