@@ -3,7 +3,7 @@ import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { getOrders } from '@/lib/api/orders'
-import OrdersTable from '@/app/(admin)/dashboard/_components/orders/orders-table'
+import OrdersTable from '@/app/(admin)/dashboard/orders/_components/orders-table'
 
 export const metadata = {
   title: 'StorefrontX - Orders',

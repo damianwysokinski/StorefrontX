@@ -1,4 +1,4 @@
-import Cart from '../_components/cart/cart'
+import Cart from './_components/cart'
 import Section from '../_components/shared/section'
 
 export default function Page() {

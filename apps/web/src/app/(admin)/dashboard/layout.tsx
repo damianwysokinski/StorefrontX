@@ -13,7 +13,7 @@ export default function DashboardLayout({
       <div className="flex flex-1">
         <Sidebar />
         <div className="flex-1 bg-stone-100">
-          <main className="p-4 h-[calc(100vh-60px)] w-screen md:w-[calc(100vw-250px)] overflow-y-auto">
+          <main className="p-4 h-[calc(100vh-60px)] overflow-y-auto">
             {children}
           </main>
         </div>

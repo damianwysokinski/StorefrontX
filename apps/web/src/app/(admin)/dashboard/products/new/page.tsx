@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ProductForm from '../../_components/products/product-form'
+import ProductsForm from '../_components/products-form'
 import { createProduct } from '@/actions/product-actions'
 import { MoveLeft } from 'lucide-react'
 import PageTitle from '../../_components/shared/page-title'
@@ -22,11 +22,11 @@ export default async function Page() {
         </div>
       </PageHeader>
 
-      <ProductForm action={createProduct}>
+      <ProductsForm action={createProduct}>
         <Button size="sm" type="submit">
           Save
         </Button>
-      </ProductForm>
+      </ProductsForm>
     </>
   )
 }

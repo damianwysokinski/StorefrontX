@@ -10,7 +10,7 @@ interface CustomerFormProps {
   children?: React.ReactNode
 }
 
-export default function CustomerForm({
+export default function CustomersForm({
   action,
   customer,
   children,

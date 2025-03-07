@@ -1,5 +1,5 @@
 import { getProducts } from '@/lib/api/products'
-import ProductsList from './_components/products/product-list'
+import ProductsList from './_components/shared/product-list'
 import Section from './_components/shared/section'
 
 export default async function Page() {

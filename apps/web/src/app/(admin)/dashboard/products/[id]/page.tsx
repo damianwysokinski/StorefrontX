@@ -1,6 +1,6 @@
 import { getProductById } from '@/lib/api/products'
 import Link from 'next/link'
-import ProductForm from '../../_components/products/product-form'
+import ProductsForm from '../_components/products-form'
 import { removeProduct, updateProduct } from '@/actions/product-actions'
 import { MoveLeft } from 'lucide-react'
 import PageTitle from '../../_components/shared/page-title'
@@ -47,7 +47,7 @@ export default async function Page({
         </Button>
       </PageHeader>
 
-      <ProductForm
+      <ProductsForm
         action={updateProduct.bind(null, productId)}
         product={product}
       >
@@ -62,7 +62,7 @@ export default async function Page({
         <Button size="sm" type="submit">
           Save
         </Button>
-      </ProductForm>
+      </ProductsForm>
     </>
   )
 }

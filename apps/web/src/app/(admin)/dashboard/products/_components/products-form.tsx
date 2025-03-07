@@ -19,7 +19,7 @@ interface ProductFormProps {
   children: React.ReactNode
 }
 
-export default function ProductForm({
+export default function ProductsForm({
   action,
   product,
   children,

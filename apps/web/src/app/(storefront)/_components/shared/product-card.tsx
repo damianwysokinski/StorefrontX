@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Product } from '@/types/product'
-import ButtonAddToCart from '../shared/button-add-to-cart'
+import ButtonAddToCart from './button-add-to-cart'
 
 export default function ProductCard(product: Product) {
   const { id, images, title, price } = product
