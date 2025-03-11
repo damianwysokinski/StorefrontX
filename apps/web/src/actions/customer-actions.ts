@@ -2,18 +2,19 @@
 
 import { addCustomer } from '@/lib/api/customers'
 import { redirect } from 'next/navigation'
+import { Customer } from '@/types/customer'
+
+function extractCustomerData(formData: FormData): Customer {
+  return {
+    firstName: formData.get('firstName') as string,
+    lastName: formData.get('lastName') as string,
+    email: formData.get('email') as string,
+  }
+}
 
 export async function createCustomer(formData: FormData) {
-  const firstName = formData.get('firstName') as string
-  const lastName = formData.get('lastName') as string
-  const email = formData.get('email') as string
-
-  const { id } = await addCustomer({
-    firstName,
-    lastName,
-    email,
-  })
-
+  const customerData = extractCustomerData(formData)
+  const { id } = await addCustomer(customerData)
   redirect(`/dashboard/customers/${id}`)
 }
 
