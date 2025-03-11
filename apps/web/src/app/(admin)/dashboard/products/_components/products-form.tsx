@@ -12,17 +12,26 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Card, CardContent } from '@/components/ui/card'
+import ProductsFormActions from '@/app/(admin)/dashboard/products/_components/products-form-actions'
 
 interface ProductFormProps {
   action: (formData: FormData) => void
   product?: Product
-  children: React.ReactNode
+  editing?: boolean
 }
 
 export default function ProductsForm({
   action,
-  product,
-  children,
+  product = {
+    id: '',
+    title: '',
+    handle: '',
+    category: '',
+    price: 0.0,
+    quantity: 0,
+    status: 'draft',
+  },
+  editing,
 }: ProductFormProps) {
   return (
     <>
@@ -37,7 +46,7 @@ export default function ProductsForm({
                     id="title"
                     type="text"
                     name="title"
-                    defaultValue={product?.title}
+                    defaultValue={product.title}
                     required
                   />
                 </div>
@@ -47,7 +56,7 @@ export default function ProductsForm({
                     id="handle"
                     type="text"
                     name="handle"
-                    defaultValue={product?.handle}
+                    defaultValue={product.handle}
                     required
                   />
                 </div>
@@ -56,7 +65,7 @@ export default function ProductsForm({
                   <Textarea
                     id="description"
                     name="description"
-                    defaultValue={product?.description}
+                    defaultValue={product.description}
                   />
                 </div>
                 <div>
@@ -75,7 +84,7 @@ export default function ProductsForm({
                     id="category"
                     type="text"
                     name="category"
-                    defaultValue={product?.category}
+                    defaultValue={product.category}
                   />
                 </div>
               </CardContent>
@@ -90,7 +99,7 @@ export default function ProductsForm({
                     type="number"
                     name="price"
                     step="any"
-                    defaultValue={product?.price ?? 0.0}
+                    defaultValue={product.price}
                     required
                   />
                 </div>
@@ -106,7 +115,7 @@ export default function ProductsForm({
                     type="number"
                     name="quantity"
                     step="any"
-                    defaultValue={product?.quantity ?? 0}
+                    defaultValue={product.quantity}
                     required
                   />
                 </div>
@@ -118,7 +127,7 @@ export default function ProductsForm({
             <CardContent className="space-y-4">
               <div>
                 <Label>Status</Label>
-                <Select name="status" defaultValue={product?.status ?? 'draft'}>
+                <Select name="status" defaultValue={product.status}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="" />
                   </SelectTrigger>
@@ -136,7 +145,7 @@ export default function ProductsForm({
 
         <Separator />
 
-        <div className="flex items-center justify-end gap-2">{children}</div>
+        <ProductsFormActions id={product.id} editing={editing} />
       </form>
     </>
   )

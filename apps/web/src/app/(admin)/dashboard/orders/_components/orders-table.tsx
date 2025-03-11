@@ -10,7 +10,6 @@ import {
 import Link from 'next/link'
 import { Order } from '@/types/order'
 import { formatDate } from '@/lib/utils/format-date'
-import { Button } from '@/components/ui/button'
 
 interface OrdersTableProps {
   orders: Order[]

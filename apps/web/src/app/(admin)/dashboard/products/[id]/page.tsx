@@ -1,7 +1,7 @@
 import { getProductById } from '@/lib/api/products'
 import Link from 'next/link'
 import ProductsForm from '../_components/products-form'
-import { removeProduct, updateProduct } from '@/actions/product-actions'
+import { updateProduct } from '@/actions/product-actions'
 import { MoveLeft } from 'lucide-react'
 import PageTitle from '../../_components/shared/page-title'
 import PageHeader from '../../_components/shared/page-header'
@@ -50,19 +50,8 @@ export default async function Page({
       <ProductsForm
         action={updateProduct.bind(null, productId)}
         product={product}
-      >
-        <Button
-          size="sm"
-          type="button"
-          variant="destructive"
-          onClick={removeProduct.bind(null, productId)}
-        >
-          Delete product
-        </Button>
-        <Button size="sm" type="submit">
-          Save
-        </Button>
-      </ProductsForm>
+        editing
+      />
     </>
   )
 }
