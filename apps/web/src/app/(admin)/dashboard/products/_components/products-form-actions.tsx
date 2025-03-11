@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { removeProduct } from '@/actions/product-actions'
 
 interface ProductsFormActionsProps {
-  id: string
+  id?: string
   editing?: boolean
 }
 
@@ -17,7 +17,7 @@ export default function ProductsFormActions({
           size="sm"
           type="button"
           variant="destructive"
-          onClick={removeProduct.bind(null, id)}
+          onClick={removeProduct.bind(null, id!)}
         >
           Delete product
         </Button>

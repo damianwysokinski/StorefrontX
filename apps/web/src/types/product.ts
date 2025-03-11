@@ -3,7 +3,7 @@ import { Review } from './review'
 import { OrderItem } from '@/types/order'
 
 export interface Product {
-  id: string
+  id?: string
   title: string
   handle: string
   images?: Image[]
