@@ -11,31 +11,31 @@ export default function SidebarMenu() {
   const menuItems = [
     {
       key: 'dashboard',
-      icon: <House size={16} />,
+      icon: House,
       url: '/',
       label: 'Overview',
     },
     {
       key: 'products',
-      icon: <Tags size={16} />,
+      icon: Tags,
       url: 'products',
       label: 'Products',
     },
     {
       key: 'orders',
-      icon: <Package size={16} />,
+      icon: Package,
       url: 'orders',
       label: 'Orders',
     },
     {
       key: 'customers',
-      icon: <User size={16} />,
+      icon: User,
       url: 'customers',
       label: 'Customers',
     },
     {
       key: 'settings',
-      icon: <Settings size={16} />,
+      icon: Settings,
       url: 'settings',
       label: 'Settings',
     },
@@ -48,7 +48,7 @@ export default function SidebarMenu() {
           return (
             <SidebarMenuItem
               key={key}
-              icon={icon}
+              Icon={icon}
               url={url}
               label={label}
               isActive={currentPath === key}
