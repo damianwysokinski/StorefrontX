@@ -1,15 +1,8 @@
 'use client'
 
 import { House, Package, Settings, Tags, User } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-interface SidebarMenuItemProps {
-  icon?: React.ReactElement
-  url: string
-  label: string
-  isActive: boolean
-}
+import SidebarMenuItem from './sidebar-menu-item'
 
 export default function SidebarMenu() {
   const pathname = usePathname()
@@ -51,28 +44,18 @@ export default function SidebarMenu() {
   return (
     <nav>
       <ul className="p-2 space-y-1">
-        {menuItems.map(({ key, icon, url, label }) => (
-          <li key={key}>
+        {menuItems.map(({ key, icon, url, label }) => {
+          return (
             <SidebarMenuItem
+              key={key}
               icon={icon}
               url={url}
               label={label}
               isActive={currentPath === key}
             />
-          </li>
-        ))}
+          )
+        })}
       </ul>
     </nav>
-  )
-}
-
-function SidebarMenuItem({ icon, url, label, isActive }: SidebarMenuItemProps) {
-  return (
-    <Link
-      href={`/dashboard/${url}`}
-      className={`rounded-md hover:bg-stone-200 py-1.5 px-2 flex items-center gap-2 text-sm ${isActive ? 'bg-stone-200' : ''}`}
-    >
-      {icon} {label}
-    </Link>
   )
 }
