@@ -11,8 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Card, CardContent } from '@/components/ui/card'
-import ProductsFormActions from '@/app/(admin)/dashboard/products/_components/products-form-actions'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import ProductsFormActions from './products-form-actions'
 
 interface ProductFormProps {
   action: (formData: FormData) => void
@@ -51,31 +51,11 @@ export default function ProductsForm({
                   />
                 </div>
                 <div>
-                  <Label htmlFor="handle">Slug</Label>
-                  <Input
-                    id="handle"
-                    type="text"
-                    name="handle"
-                    defaultValue={product.handle}
-                    required
-                  />
-                </div>
-                <div>
                   <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
                     defaultValue={product.description}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="images">Media</Label>
-                  <Input
-                    id="images"
-                    type="file"
-                    name="images"
-                    accept="image/png, image/jpeg"
-                    multiple
                   />
                 </div>
                 <div>
@@ -91,6 +71,9 @@ export default function ProductsForm({
             </Card>
 
             <Card>
+              <CardHeader>
+                <CardTitle>Pricing</CardTitle>
+              </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="price">Price</Label>
@@ -107,6 +90,9 @@ export default function ProductsForm({
             </Card>
 
             <Card>
+              <CardHeader>
+                <CardTitle>Inventory</CardTitle>
+              </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="quantity">Quantity</Label>
@@ -116,6 +102,24 @@ export default function ProductsForm({
                     name="quantity"
                     step="any"
                     defaultValue={product.quantity}
+                    required
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Search engine listing</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="handle">URL handle</Label>
+                  <Input
+                    id="handle"
+                    type="text"
+                    name="handle"
+                    defaultValue={product.handle}
                     required
                   />
                 </div>
