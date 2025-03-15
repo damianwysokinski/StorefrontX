@@ -3,7 +3,8 @@ import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { getOrders } from '@/lib/api/orders'
-import OrdersTable from '@/app/(admin)/dashboard/orders/_components/orders-table'
+import { OrdersTable } from './_components/orders-table'
+import { ordersTableColumns } from '@/app/(admin)/dashboard/orders/_components/orders-table-columns'
 
 export const metadata = {
   title: 'StorefrontX - Orders',
@@ -21,7 +22,7 @@ export default async function Page() {
         </Button>
       </PageHeader>
 
-      <OrdersTable orders={orders} />
+      <OrdersTable columns={ordersTableColumns} data={orders} />
     </>
   )
 }

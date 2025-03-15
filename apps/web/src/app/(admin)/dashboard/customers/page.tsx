@@ -3,7 +3,8 @@ import PageHeader from '../_components/shared/page-header'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { getCustomers } from '@/lib/api/customers'
-import CustomersTable from './_components/customers-table'
+import { CustomersTable } from './_components/customers-table'
+import { customersTableColumns } from '@/app/(admin)/dashboard/customers/_components/customers-table-columns'
 
 export const metadata = {
   title: 'StorefrontX - Customers',
@@ -21,7 +22,7 @@ export default async function Page() {
         </Button>
       </PageHeader>
 
-      <CustomersTable customers={customers} />
+      <CustomersTable columns={customersTableColumns} data={customers} />
     </>
   )
 }

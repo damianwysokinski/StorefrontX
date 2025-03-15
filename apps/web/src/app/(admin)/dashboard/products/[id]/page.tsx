@@ -40,11 +40,13 @@ export default async function Page({
           <PageTitle title={title} />
         </div>
 
-        <Button size="sm" variant="secondary" asChild>
-          <a href={`/products/${id}`} target="_blank" rel="noreferrer">
-            Preview
-          </a>
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button size="sm" variant="secondary" asChild>
+            <a href={`/products/${id}`} target="_blank" rel="noreferrer">
+              Preview
+            </a>
+          </Button>
+        </div>
       </PageHeader>
 
       <ProductsForm
