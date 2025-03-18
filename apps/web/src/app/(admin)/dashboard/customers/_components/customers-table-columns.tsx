@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Customer } from '@/types/customer'
 import { Order } from '@/types/order'
+import Link from 'next/link'
 
 export const customersTableColumns: ColumnDef<Customer>[] = [
   {
@@ -30,8 +31,9 @@ export const customersTableColumns: ColumnDef<Customer>[] = [
     accessorKey: 'email',
     header: 'Email',
     cell: ({ row }) => {
+      const id: string = row.original.id!
       const email: string = row.getValue('email')
-      return <div>{email}</div>
+      return <Link href={`/dashboard/customers/${id}`}>{email}</Link>
     },
   },
   {
